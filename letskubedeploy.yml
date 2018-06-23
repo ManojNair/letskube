@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: letskube-deployment
+  labels:
+    app: letskube
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: letskube
+      labels:
+        app: letskube
+    spec:
+      containers:
+      - name: letskube
+        image: letskubedemo.azurecr.io/letskube:latest
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: letskube
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: letskube-service
+spec:
+  selector:
+    app: letskube
+  ports:
+    - port: 80
+  type: NodePort
+  
+  

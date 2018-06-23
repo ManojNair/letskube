@@ -1,0 +1,39 @@
+﻿@page
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Let's Kube on Azure</title>
+</head>
+<body style="margin: 15px; background-color: #FFFFFF">
+
+<div style="border: 1px solid lightgray">
+    <div style="margin: 20px; border-radius: 0; color: white; background-color: #675BA7" class="jumbotron">
+        <h1 class="display-4">@Environment.MachineName</h1>
+        <p class="lead">This is a simple ASP.NET Core Web Application that returns the name, the one above, of the host running the App or wait is this running in a Container..?</p>
+        <hr class="my-4" style="background-color: white">
+        <p class="lead">Powered by Microsoft Azure Kubernetes Service and .NET Core</p>
+        <p><b>Joke of the Day</b>: @Configuration["Message"]</p>
+        <p><b>Application Version</b>: @Configuration["Version"]</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
